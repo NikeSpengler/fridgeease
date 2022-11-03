@@ -1,1 +1,6 @@
-
+*{
+    background: #dfdfdf;
+}
+.App {
+    min-height: 100%;
+}

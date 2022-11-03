@@ -21,3 +21,45 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+    <li className='nav-list'>
+                <Link to="/fridge">
+                  <span className='icon'><BiFridge size={20}/></span>
+                  <span className='text'>Mitt kylskåp</span>
+                </Link>
+              </li>
+              <li className='nav-list'>
+                <Link to="/recipe">
+                  <span className='nav__icon'><IoMdBook size={20}/></span>
+                  <span className='text'>Recept</span>
+                </Link>
+              </li>
+              <li className='nav-list'>
+                <Link to="/favoriterecipes">
+                  <span className='icon'><FiHeart size={20}/></span>
+                  <span className='text'>Favoritrecept</span>
+                </Link>
+              </li>
+              <li className='nav-list'>
+                <Link to="/grocerylist">
+                  <span className='icon'><AiOutlineUser size={20}/></span>
+                  <span className='text'>Min sida</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/user">
+                  <span className='icon'><FiShoppingCart size={20}/></span>
+                  <span className='text'>Inköpslista</span>
+                </Link>
+              </li>
+
+
+{/* <Link to="/fridge"><li><BiFridge size={20}/></li></Link>
+            {/* <Link to="/fridgeform"><li>Mitt kylskåp</li></Link> */}
+            {/* <Link to="/recipe"><li><IoMdBook size={20}/></li></Link> */}
+            {/* <Link to="/fridgeform"><li>Recept</li></Link> */}
+            {/* <Link to="/favoriterecipes"><li><FiHeart size={20}/></li></Link>
+            <Link to="/user"><li><AiOutlineUser size={20}/></li></Link>
+            <Link to="/grocerylist"><li><FiShoppingCart size={20}/></li> */}
+              {/* <p>0</p> */}
+            {/* </Link> */}
