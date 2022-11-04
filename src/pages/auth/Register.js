@@ -1,12 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { createUserWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/config";
+import Loader from '../../components/loader/Loader';
+
 
 //styles
 import "./auth.css"
+
 
 const Register = () => {
   const [email, setEmail] = useState("")
@@ -14,22 +18,27 @@ const Register = () => {
   const [cPassword, setCPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
+  const navigate = useNavigate()
+
   const registerUser = (e) => {
     e.preventDefault()
     if(password !== cPassword){
       toast.error("Lösenordet stämmer inte överens.")
     }
+  setIsLoading(true)
 
     createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
+    // Signed in
     const user = userCredential.user;
-    // ...
+    console.log(user)
+    setIsLoading(false)
+    toast.success("Registreringen lyckades!")
+    navigate("/login")
   })
   .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
+    toast.error(error.message);
+    setIsLoading(false)
   });
 
   };
@@ -37,6 +46,7 @@ const Register = () => {
   return (
     <>
     <ToastContainer />
+    {isLoading && <Loader/>}
       <section className="container-register">
         <div className='form'>
             <h2>Registrera dig</h2>
@@ -44,19 +54,22 @@ const Register = () => {
                 <input 
                   type='text' 
                   placeholder='Email' 
-                  required value={email} 
+                  required 
+                  value={email} 
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <input 
                   type='password' 
                   placeholder='Lösenord' 
-                  required value={password} 
+                  required 
+                  value={password} 
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <input 
                   type='password' 
                   placeholder='Bekräfta lösenord' 
-                  required value={cPassword} 
+                  required 
+                  value={cPassword} 
                   onChange={(e) => setCPassword(e.target.value)}
                 />
                 <button type="submit" className='block'>Registrera</button>
