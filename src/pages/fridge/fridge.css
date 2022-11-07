@@ -3,25 +3,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
-
-.register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-}
-  
-/* .img {
-    animation: slide-down 0.5s ease;
-} */
-  
-/* .form {
-      width: 35rem;
-      padding: 1.5rem;
-      animation: slide-up 0.5s ease;
-} */
 
 h2 {
     color: darkgreen;
@@ -34,11 +17,6 @@ a {
     color: darkgreen;
 }
 
-div .options {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-}
 
 p{
     font-size: small;
@@ -62,7 +40,7 @@ form {
 
 input{
     display: flex;
-    align-items: center;
+    align-content: center;
     justify-content: center;
     flex-direction: column;
     background-color: whitesmoke;
@@ -79,29 +57,25 @@ input{
     color: darkgreen;
 }
 
-button {
-    display: block;
-    width: 100%;
-    cursor: pointer;
+.button-parent{
+    display: flex;
+    justify-content: space-between;  
+}
+
+.button-search,
+.button-add {
+    display: inline-block;
     text-align: center;
+    width: 45%;
+    cursor: pointer;
     background-color: darkgreen;
     color: whitesmoke;
     border-radius: 20px;
     border: none;
-    padding: 10px 50px;
     margin-top: 20px;
-    
 }
+
 button:hover {
-    opacity: 90%;
-}
-
-
-.signout{
-    background-color: darkred;
-    /* margin-top: 80px; */
-}
-.signout:hover{
     opacity: 90%;
 }
 
@@ -109,36 +83,4 @@ link {
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
-}
-  
-
-
-
-
-
-
-@keyframes slide-up {
-        0% {
-        transform: translateY(-5rem);
-    }
-        100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide-down {
-        0% {
-        transform: translateY(5rem);
-    }
-        100% {
-        transform: translateY(0);
-    }
-}
-
-  
-  
-@media screen and (max-width: 700px) {
-    .img {
-      display: none;
-    }
 }

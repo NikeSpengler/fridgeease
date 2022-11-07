@@ -1,15 +1,36 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {BiFridge} from "react-icons/bi"
 import {FiShoppingCart, FiHeart} from "react-icons/fi"
 import {AiOutlineUser} from "react-icons/ai"
 import {IoMdBook} from "react-icons/io"
-
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../../firebase/config'
 
 //styles
 import "./Header.module.css"
 
-function Header() {
+
+const Header = () => {
+  const [displayName, setdisplayName] = useState("");
+  
+  //monitor currently signed in user
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        //user signed in
+        const uid = user.uid;
+        console.log(user.displayName)
+        setdisplayName(user.displayName)
+      } else {
+        // User is signed out
+        setdisplayName("")
+      }
+    });
+  },[])
+
+ 
+
   return (
         <div className='nav-container'>
           <nav className='navbar'>
