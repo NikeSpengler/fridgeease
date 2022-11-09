@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //styles
@@ -24,7 +24,7 @@ function App() {
         <ToastContainer/>
         <Header/>
           <Routes>
-            <Route path="/" element={ <Home/> } />
+            <Route path="/home" element={ <Home/> } />
             <Route path="/fridge" element={ <Fridge/> }/>
             <Route path="/contact" element={ <Contact/> } />
             <Route path="/login" element={ <Login/> } />

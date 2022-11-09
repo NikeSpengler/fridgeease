@@ -25,7 +25,7 @@ const Login = () => {
         
         signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        const user = userCredential.user;
+        // const user = userCredential.user;
         setIsLoading(false)
         toast.success("Du är inloggad!");
         navigate("/")
@@ -67,22 +67,17 @@ const logout = () => {
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit" className='block'>Logga in</button>
+                <Link to="/home"><button className='signin'>Logga in</button></Link>
                 <div className='signin-link'>
                     <Link to="/reset">Återställ lösenord</Link>
                 </div>
                 <p>or</p>
-                
-                {/* <span className=''>
-                    <p>Har du inte ett konto?</p>
-                    <Link to="./register">Registrera dig</Link>
-                </span> */}
             </form>
             <form>
                 <Link to="/register"><button>Registrera dig</button></Link>
             </form>
             <form>
-                <Link to="/" onClick={logout}><button className='signout'>Logga ut</button></Link>
+                <Link to="/home" onClick={logout}><button className='signout'>Logga ut</button></Link>
             </form>
         </div>
     </section>

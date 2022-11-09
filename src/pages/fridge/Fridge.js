@@ -1,47 +1,43 @@
-import { useEffect, useState } from 'react'
-import { auth } from '../../firebase/config'
-import { onAuthStateChanged } from "firebase/auth";
+import { useState } from 'react'
 
 //styles
 import "./fridge.css"
 
-const Fridge = () => {
-    const [displayName, setdisplayName] = useState("");
 
-    //monitor currently signed in user
-    useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is signed in, see docs for a list of available properties
-                const uid = user.uid;
-                console.log(user.displayName)
-                setdisplayName(user.displayName)
-            } else {
-              // User is signed out
-              setdisplayName("")
-            }
-          });
-    }, [])
+const Fridge = () => {
+    const [product, setProduct] = useState ({
+        name:"",
+        category:"",
+        description: "",
+    })
+      
+    const handleInputChange = (e) => {
+        const {name, value} = e.target
+        setProduct({...product, [name]: value})
+    };
+    
+    const addProduct = (e) => {
+        e.preventDefault()
+        console.log(product)
+    };
 
   return (
     <section className="container-signin">
         <div className='form'>
-            <a href='#'><h1>Hej, här är ditt kylskåp {displayName}</h1></a>
+            <h1>Ditt kylskåp</h1>
             <form onSubmit={""}>
                 <input 
                     type='text' 
                     placeholder='Sök efter matvara...' 
-                    required
+                    // required
+                    name="name"
+                    value={product.name}
+                    onChange={(e) => handleInputChange(e)}
                 />
-                {/* <button type="submit" className='block'>Sök</button>
-                <button type="submit" className='block'>Lägg till</button> */}
-                {/* <div className='signin-link'>
-                    <Link to="/reset">Återställ lösenord</Link>
-                </div> */}
             </form>
             <div className='button-parent'>
-                <button type="submit" className='button-search'>Sök</button>
                 <button type="submit" className='button-add'>Lägg till</button>
+                <button type="submit" className='button-search'>Sök</button>
             </div>
         </div>
     </section>
