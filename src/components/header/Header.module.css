@@ -7,6 +7,10 @@ h1{
     font-weight: 400;
 }
 
+.navbar-logo{
+    font-weight: 400;
+}
+
 a {
     text-decoration: none;
     color: darkgreen;  
@@ -72,12 +76,6 @@ nav .navbar-logo {
 } */
 
 
-
-
-/* .nav__icon {
-   display: none;
-
-} */
 
 
 /* FOR MOBILE DEVICE */

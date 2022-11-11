@@ -53,27 +53,58 @@ input{
 
 }
 
+select{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    color: darkgreen;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 10px;
+    padding-right: 245px;
+}
+
 .placeholder{
     color: darkgreen;
 }
 
-.button-parent{
+.side-by{
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between; 
 }
 
-.button-search,
+/* .button-parent{
+    display: flex;
+    justify-content: space-between;  
+} */
+
 .button-add {
     display: inline-block;
     text-align: center;
-    width: 45%;
     cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+     background-color: darkgreen;
+    color: whitesmoke;
+}
+
+/* button {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
     background-color: darkgreen;
     color: whitesmoke;
     border-radius: 20px;
     border: none;
+    padding: 10px 50px;
     margin-top: 20px;
-}
+    
+} */
 
 button:hover {
     opacity: 90%;
