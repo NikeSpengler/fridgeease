@@ -7,8 +7,8 @@ const Recipes = () => {
   return (
     <section className="container">
         <div className='form'>
-            <h1>Din inköpslista</h1>
-            <form onSubmit={addProduct}>
+            <h1>Recept</h1>
+            <form onSubmit={""}>
                 <input 
                     type='text' 
                     placeholder='Lägg till matvara...' 
@@ -17,7 +17,7 @@ const Recipes = () => {
                 
                 />
                     
-                <button type="submit" className='button-add'>Lägg till</button>
+                <button type="submit" className='button-add'>Sök</button>
             </form>
         </div>
     
