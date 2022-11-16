@@ -1,0 +1,117 @@
+section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+}
+
+h1 {
+    color: darkgreen;
+    text-align: center;
+    font-weight: 300;
+}
+
+a {
+    font-size: small;
+    color: darkgreen;
+}
+
+
+p{
+    font-size: small;
+    text-align: center;
+    margin: 1rem;
+    color: darkgreen;
+
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 300;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+input{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    color: darkgreen;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 10px;
+    padding-right: 200px;
+
+}
+
+select{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    color: darkgreen;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 10px;
+    padding-right: 245px;
+}
+
+.placeholder{
+    color: darkgreen;
+}
+
+.side-by{
+    display: flex;
+    justify-content: space-between; 
+}
+
+/* .button-parent{
+    display: flex;
+    justify-content: space-between;  
+} */
+
+.button-add {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+     background-color: darkgreen;
+    color: whitesmoke;
+}
+
+/* button {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    background-color: darkgreen;
+    color: whitesmoke;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 50px;
+    margin-top: 20px;
+    
+} */
+
+button:hover {
+    opacity: 90%;
+}
+
+link {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}

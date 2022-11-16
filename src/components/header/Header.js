@@ -50,7 +50,7 @@ const Header = () => {
             <ul className='mobile-links' id="mobile-links">
               {/* <AdminOnlyRoute><Link to="/"><li><b>Admin</b></li></Link></AdminOnlyRoute> */}
               <Link to="/fridge"><li><BiFridge size={20}/></li></Link>
-              <Link to="/recipe"><li><IoMdBook size={20}/></li></Link> 
+              <Link to="/recipes"><li><IoMdBook size={20}/></li></Link> 
               <ShowOnLogin><Link to="/favoriterecipes"><li><FiHeart size={20}/></li></Link> </ShowOnLogin>
               <Link to="/login"><li><AiOutlineUser size={20}/></li></Link>
               <Link to="/grocerylist"><li><FiShoppingCart size={20}/></li></Link>
