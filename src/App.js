@@ -17,6 +17,7 @@ import Fridge from "./pages/fridge/Fridge";
 import GroceryList from "./pages/groceryList/GroceryList";
 import Recipes from "./pages/recipes/Recipes";
 import FavoriteRecipes from "./pages/favoriteRecipes/FavoriteRecipes";
+import DetailProducts from "./pages/fridge/DetailProducts";
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Routes>
             <Route path="/home" element={ <Home/> } />
             <Route path="/fridge" element={ <Fridge/> }/>
+            <Route path="/fridge/:id" element={ <DetailProducts/> }/>
             <Route path="/recipes" element={ <Recipes/> }/>
             <Route path="/favoriterecipes" element={ <FavoriteRecipes/> }/>
             <Route path="/grocerylist" element={ <GroceryList/> } />

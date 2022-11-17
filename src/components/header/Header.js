@@ -9,30 +9,10 @@ import {IoMdBook} from "react-icons/io"
 
 //styles
 import "./Header.module.css"
-import ShowOnLogin from '../hiddenLink/hiddenLink'
-// import AdminOnlyRoute from '../adminOnlyRoute/AdminOnlyRoute'
+
 
 
 const Header = () => {
-  // const [displayName, setdisplayName] = useState("");
-  
-  // //monitor currently signed in user
-  // useEffect(() => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       //user signed in
-  //       const uid = user.uid;
-  //       console.log(user.displayName)
-  //       setdisplayName(user.displayName)
-  //     } else {
-  //       // User is signed out
-  //       setdisplayName("")
-  //     }
-  //   });
-  // },[])
-
- 
-
   return (
         <div className='nav-container'>
           <nav className='navbar'>
@@ -51,7 +31,7 @@ const Header = () => {
               {/* <AdminOnlyRoute><Link to="/"><li><b>Admin</b></li></Link></AdminOnlyRoute> */}
               <Link to="/fridge"><li><BiFridge size={20}/></li></Link>
               <Link to="/recipes"><li><IoMdBook size={20}/></li></Link> 
-              <ShowOnLogin><Link to="/favoriterecipes"><li><FiHeart size={20}/></li></Link> </ShowOnLogin>
+              <Link to="/favoriterecipes"><li><FiHeart size={20}/></li></Link>
               <Link to="/login"><li><AiOutlineUser size={20}/></li></Link>
               <Link to="/grocerylist"><li><FiShoppingCart size={20}/></li></Link>
             </ul>

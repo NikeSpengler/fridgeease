@@ -6,6 +6,20 @@ section {
     /* flex-direction: column; */
 }
 
+.fridge-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgreen;
+    margin-bottom: 40px;
+}
+
+.fridge-img:hover{
+    color: green;
+}
+
+
+
 h1,
 h3 {
     color: darkgreen;

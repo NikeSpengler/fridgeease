@@ -5,16 +5,15 @@ import { db } from '../../firebase/config';
 import ViewProducts from './ViewProducts';
 
 //styles
-import "./fridge.css"
+import "./Fridge.css"
 
 
 const categories = [
     {id: 1, name: "Allt"},
     {id: 2, name: "Grönsaker"},
     {id: 3, name: "Frukt"},
-    {id: 4, name: "Mejeri"},
-    {id: 5, name: "Skafferi"},
-    {id: 6, name: "Kött"},
+    {id: 4, name: "Kylvaror"},
+    {id: 5, name: "Torrvaror"},
 ]
 
 const initialState = {
@@ -91,6 +90,18 @@ const Fridge = () => {
                             })}
                     </select> 
                     <button type="submit" className='button-add'>Lägg till</button>
+                    <select 
+                        className=""
+                        type="text" 
+                        placeholder="Filter"
+                    >
+                        <option value="allt">Allt</option>
+                        <option value="grönsaker">Grönsaker</option>
+                        <option value="frukt">Frukt</option>
+                        <option value="kylvaror">Kylvaror</option>
+                        <option value="torrvaror">Torrvaror</option>
+                        <option value="a-ö">A-Ö</option>
+                    </select>
             </form>
            
              {/* <input 

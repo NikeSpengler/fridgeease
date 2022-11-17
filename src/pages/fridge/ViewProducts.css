@@ -17,10 +17,7 @@ table {
     margin-top: 40px;
 }
   
-thead {
-    border-top: 2px solid var(--light-blue);
-    border-bottom: 2px solid var(--light-blue);
-}
+
 
 th {
     border: 1px solid #eee;

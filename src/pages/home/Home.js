@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { SET_ACTIVE_USER } from '../../redux/slice/authSlice';
 import { REMOVE_ACTIVE_USER } from '../../redux/slice/authSlice';
 import {BiFridge} from "react-icons/bi";
-import { FiHeart} from "react-icons/fi";
+
 
 //styles
 import "./Home.css"
@@ -48,13 +48,13 @@ function Home() {
   return (
     <section className="container-signin">
         <div className='form'>
+            <a className='fridge-img' href='/fridge'><BiFridge size={70}/></a>
             <h1 className='title-home'>Välkommen till FridgeEase!</h1>
             <h1><b>{displayName}</b></h1>
             <p className='text-home'>Appen för dig som vill ta till vara på allt i ditt kylskåp, 
             ha koll på varornas hållbarhet<br/> och söka efter recept som passar de varor du vill använda först.</p>
             <a className='link-fridge' href='/fridge'>Tryck här för att komma till ditt kylskåp.</a>
-            <li><BiFridge size={70}/></li>
-            <li><FiHeart size={70}/></li>
+            
 
         </div>
     </section>

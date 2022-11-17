@@ -6,6 +6,7 @@ import { FiInfo } from "react-icons/fi"
 import { BiTrash } from "react-icons/bi"
 import { Link } from 'react-router-dom';
 import Loader  from '../../components/loader/Loader';
+import Notiflix from 'notiflix';
 
 // styles
 import "./ViewProducts.css"
@@ -44,6 +45,29 @@ const ViewProducts = () => {
     }
   };
 
+  // using comformbox/notiflix before deleting product
+  const confirmDelete = (id) => {
+    Notiflix.Confirm.show(
+      '!',
+      'Vill du radera denna vara?',
+      'Radera',
+      'Avbryt',
+      function okCb() {
+        deleteProduct(id)
+      },
+      function cancelCb() {
+        console.log("Avbrutet");
+      },
+      {
+        width: '320px',
+        borderRadius: '3px',
+        titleColor: "#8b0000",
+        okButtonBackground: "#8b0000",
+        // etc...
+      },
+    );
+  };
+
   const deleteProduct = async (id) => {
     try {
       await deleteDoc(doc(db, "products", id));
@@ -71,16 +95,15 @@ const ViewProducts = () => {
           </thead>
           <tbody>
             {products.map((product, index) => {
-              const {id, name, category, desc, amount} = product;
+              const {id, name, category, amount} = product;
               return (
                 
                   <tr key={id}>
                     <td>{name}</td>
-                    <td>{category}</td>
-                    <td>{desc}</td>
                     <td>{amount}</td>
-                    <td><Link to ="/"><FiInfo size={20}/></Link></td>
-                    <td><BiTrash size={20} color="red" onClick={() => deleteProduct(id)}/></td>
+                    <td>{category}</td>                    
+                    <td><Link to ="/fridge/:id"><FiInfo size={20}/></Link></td>
+                    <td><BiTrash size={20} color="red" onClick={() => confirmDelete(id)}/></td>
                   </tr> 
               )
             })}

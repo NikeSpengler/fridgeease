@@ -11,7 +11,7 @@ const Recipes = () => {
             <form onSubmit={""}>
                 <input 
                     type='text' 
-                    placeholder='Lägg till matvara...' 
+                    placeholder='Sök efter recept...' 
                     // required
                     name="name"
                 

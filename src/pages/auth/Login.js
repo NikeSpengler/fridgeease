@@ -40,7 +40,7 @@ const Login = () => {
 const logout = () => {
     signOut(auth).then(() => {
         toast.success("Utloggad!")
-        navigate("/")
+        navigate("/home")
     }).catch((error) => {
         toast.error(error.message)
     });
