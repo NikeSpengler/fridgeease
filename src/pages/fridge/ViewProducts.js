@@ -53,7 +53,7 @@ const ViewProducts = () => {
     }
   };
 
-  // using comformbox/notiflix before deleting product
+  // using comfirmbox/notiflix before deleting product
   const confirmDelete = (id) => {
     Notiflix.Confirm.show(
       '!',
@@ -110,7 +110,7 @@ const ViewProducts = () => {
                     <td>{name}</td>
                     <td>{amount}</td>
                     <td>{category}</td>                    
-                    <td><Link to ="/fridge/:id"><FiInfo size={20}/></Link></td>
+                    <td><Link to ={`/fridge/${id}`}><FiInfo size={20}/></Link></td>
                     <td><BiTrash size={20} color="red" onClick={() => confirmDelete(id)}/></td>
                   </tr> 
               )

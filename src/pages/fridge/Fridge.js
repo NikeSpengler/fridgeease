@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { toast } from 'react-toastify';
 import { db } from '../../firebase/config';
 import ViewProducts from './ViewProducts';
+import { useParams } from 'react-router-dom';
 
 //styles
 import "./Fridge.css"
@@ -24,6 +25,8 @@ const initialState = {
 }
 
 const Fridge = () => {
+    const { id } = useParams()
+    console.log(id);
     const [product, setProduct] = useState ({
         ...initialState
     })
