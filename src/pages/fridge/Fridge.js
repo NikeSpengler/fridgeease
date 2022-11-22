@@ -1,27 +1,33 @@
 import { addDoc, collection, Timestamp } from '@firebase/firestore';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import { db } from '../../firebase/config';
 import ViewProducts from './ViewProducts';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectProducts } from '../../redux/slice/productSlice';
+import { FILTER_BY_CATEGORY } from '../../redux/slice/filterSlice';
+
 
 //styles
 import "./Fridge.css"
 
 
-const categories = [
-    {id: 1, name: "Allt"},
-    {id: 2, name: "Grönsaker"},
-    {id: 3, name: "Frukt"},
-    {id: 4, name: "Kylvaror"},
-    {id: 5, name: "Torrvaror"},
-]
+// const categories = [
+//     {id: 1, name: "Allt"},
+//     {id: 2, name: "Grönsak"},
+//     {id: 3, name: "Frukt"},
+//     {id: 4, name: "Kylvara"},
+//     {id: 5, name: "Torrvara"},
+// ]
 
 const initialState = {
     name:"",
     category:"",
     desc: "",
     amount:"",
+    storage: "",
+    content: "",
 }
 
 const Fridge = () => {
@@ -30,8 +36,25 @@ const Fridge = () => {
     const [product, setProduct] = useState ({
         ...initialState
     })
+    
 
-      
+    //filter by category, 
+    const [category, setCategory] = useState("Allt")
+    const products = useSelector(selectProducts)
+    const dispatch = useDispatch();
+    const allCategories = [
+        "Allt",
+        ...new Set(products.map((product) => product.category))
+    ]
+    console.log(allCategories);
+
+    const filterProducts = (cat) => {
+        setCategory(cat)
+        dispatch(FILTER_BY_CATEGORY({products, category: cat}))
+    };
+
+
+    // 
     const handleInputChange = (e) => {
         const {name, value} = e.target
         setProduct({...product, [name]: value})
@@ -41,7 +64,6 @@ const Fridge = () => {
     const addProduct = (e) => {
         e.preventDefault()
         console.log(product)
-
         try {
             // Add a new document with a generated id.
             const docRef = addDoc(collection(db, "products")
@@ -50,12 +72,13 @@ const Fridge = () => {
                 category: product.category,
                 desc: product.desc,
                 amount: product.amount,
+                storage: product.storage,
+                content: product.content,
                 createdAt: Timestamp.now().toDate()
             });
             //initialState rensar form fields
             setProduct({ ...initialState })
             toast.success("Produkten är tillagd")
-
         } catch(error) {
             toast.error(error.message)
         }
@@ -74,7 +97,7 @@ const Fridge = () => {
                     value={product.name}
                     onChange={(e) => handleInputChange(e)}
                 />
-                    <select className='kategori'
+                    {/* <select className='category'
                         type='text' 
                         placeholder='kategori' 
                         // required
@@ -91,19 +114,33 @@ const Fridge = () => {
                                     </option>
                                 )
                             })}
-                    </select> 
+                    </select>  */}
+                    
                     <button type="submit" className='button-add'>Lägg till</button>
+                  
                     <select 
-                        className=""
+                        className="product-filter"
                         type="text" 
                         placeholder="Filter"
                     >
+                          {allCategories.map((cat, index) => {
+                            return (
+                                <option 
+                                    key={index} 
+                                    type="button"
+                                    className={`${category}`=== cat}
+                                    onClick={() => filterProducts(cat)}
+                                >
+                                    {cat}</option>
+                            )
+                        })}
+                        
+                        <option value="" disabled>Filter</option>
                         <option value="allt">Allt</option>
-                        <option value="grönsaker">Grönsaker</option>
+                        <option value="grönsak">Grönsak</option>
                         <option value="frukt">Frukt</option>
-                        <option value="kylvaror">Kylvaror</option>
-                        <option value="torrvaror">Torrvaror</option>
-                        <option value="a-ö">A-Ö</option>
+                        <option value="kylvara">Kylvara</option>
+                        <option value="torrvara">Torrvara</option>
                     </select>
             </form>
            

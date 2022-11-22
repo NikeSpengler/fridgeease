@@ -53,7 +53,7 @@ input{
 
 }
 
-select{
+.category{
     display: flex;
     align-content: center;
     justify-content: center;
@@ -65,6 +65,11 @@ select{
     margin-top: 20px;
     padding: 10px 10px;
     padding-right: 245px;
+}
+
+.product-filter{
+    background-color: #dfdfdf;
+    padding: none;
 }
 
 .placeholder{

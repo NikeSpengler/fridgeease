@@ -1,12 +1,12 @@
-import React from 'react'
+// import React from 'react'
 
-//styles
-import "./ProductItem.css"
+// //styles
+// import "./ProductItem.css"
 
-const ProductItem = () => {
-  return (
-    <div>ProductItem</div>
-  )
-}
+// const ProductItem = ({product, id, name, amount, desc}) => {
+//   return (
+//     <div>ProductItem</div>
+//   )
+// }
 
-export default ProductItem
+// export default ProductItem
