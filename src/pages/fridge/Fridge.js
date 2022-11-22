@@ -9,6 +9,7 @@ import { selectProducts } from '../../redux/slice/productSlice';
 import { FILTER_BY_CATEGORY } from '../../redux/slice/filterSlice';
 
 
+
 //styles
 import "./Fridge.css"
 
@@ -48,10 +49,14 @@ const Fridge = () => {
     ]
     console.log(allCategories);
 
-    const filterProducts = (cat) => {
-        setCategory(cat)
-        dispatch(FILTER_BY_CATEGORY({products, category: cat}))
-    };
+    useEffect(() => {
+        dispatch(FILTER_BY_CATEGORY({products, category}));
+    }, [dispatch, products, category]);
+
+    // const filterProducts = (cat) => {
+    //     setCategory(cat)
+    //     dispatch(FILTER_BY_CATEGORY({products, category: cat}))
+    // };
 
 
     // 
@@ -117,30 +122,23 @@ const Fridge = () => {
                     </select>  */}
                     
                     <button type="submit" className='button-add'>Lägg till</button>
-                  
+                  {/* Next part of filter by category */}
                     <select 
-                        className="product-filter"
-                        type="text" 
-                        placeholder="Filter"
+                        value = {category}
+                        onChange = {(e) => setCategory(e.target.value)}
                     >
-                          {allCategories.map((cat, index) => {
+                          {allCategories.map((category, index) => {
                             return (
-                                <option 
-                                    key={index} 
-                                    type="button"
-                                    className={`${category}`=== cat}
-                                    onClick={() => filterProducts(cat)}
-                                >
-                                    {cat}</option>
+                                <option key={index} value={category}>{category}</option>
                             )
                         })}
                         
-                        <option value="" disabled>Filter</option>
+                        {/* <option value="" disabled>Filter</option>
                         <option value="allt">Allt</option>
                         <option value="grönsak">Grönsak</option>
                         <option value="frukt">Frukt</option>
                         <option value="kylvara">Kylvara</option>
-                        <option value="torrvara">Torrvara</option>
+                        <option value="torrvara">Torrvara</option> */}
                     </select>
             </form>
            

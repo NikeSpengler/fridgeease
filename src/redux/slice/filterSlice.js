@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    filteredProducts: []
+    filteredProducts: [],
 }
 
 const filterSlice = createSlice({
@@ -14,15 +14,16 @@ const filterSlice = createSlice({
         if(category === "Allt") {
             tempProducts = products
         } else {
-            tempProducts = products.filter((product) => products.category === category);
+            tempProducts = products.filter(
+                (product) => product.category === category);
         }
         state.filteredProducts = tempProducts;
       }, 
     },
 });
 
-export const {FILTER_BY_CATEGORY} = filterSlice.actions
+export const {FILTER_BY_CATEGORY} = filterSlice.actions;
 
-const  selectFilteredProducts = (state) => state.filter.filteredProducts
+export const selectFilteredProducts = (state) => state.filter.filteredProducts;
 
-export default filterSlice.reducer
+export default filterSlice.reducer;
