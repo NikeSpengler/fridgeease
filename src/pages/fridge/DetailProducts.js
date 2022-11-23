@@ -5,14 +5,22 @@ import { Link, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { db } from '../../firebase/config'
 import { Loader } from "rsuite"
+import { useDispatch } from "react-redux"
+import { ADD_TO_CART } from "../../redux/slice/cartSlice"
 // import { IoIosArrowBack} from "react-icons/io"
 // <IoIosArrowBack size={20}/>
 
 
 const DetailProducts = () => {
     const { id } = useParams()
+    const dispatch = useDispatch()
     console.log (id)
     const [product, setProduct] = useState(null)
+
+    //add to cart/ grocerylist
+    const addToCart = (product) => {
+        dispatch(ADD_TO_CART(product))
+    };
 
     const getProduct = async () => {
         console.log("Getting product")
@@ -71,7 +79,7 @@ return (
                         </p>
                         <button className="btn-detail">+</button>
                     </div>
-                    <button className="add-detail">Lägg till inköpslistan</button>
+                    <button className="add-detail" onClick={() => addToCart(product)}>Lägg till inköpslistan</button>
                     <div className="sustain-product">
                         <h3>Hur hållbar är din vara?</h3>
                         <p>Se varans hållbarthetsdeklaration.</p>

@@ -38,7 +38,6 @@ const Fridge = () => {
         ...initialState
     })
     
-
     //filter by category, 
     const [category, setCategory] = useState("Allt")
     const products = useSelector(selectProducts)
@@ -57,6 +56,8 @@ const Fridge = () => {
     //     setCategory(cat)
     //     dispatch(FILTER_BY_CATEGORY({products, category: cat}))
     // };
+
+
 
 
     // 
@@ -123,7 +124,7 @@ const Fridge = () => {
                     
                     <button type="submit" className='button-add'>Lägg till</button>
                   {/* Next part of filter by category */}
-                    <select 
+                    <select className='product-filter'
                         value = {category}
                         onChange = {(e) => setCategory(e.target.value)}
                     >

@@ -4,11 +4,13 @@ import { toast } from 'react-toastify';
 import { db } from '../../firebase/config';
 import { FiInfo } from "react-icons/fi"
 import { BiTrash } from "react-icons/bi"
+import { BsCheck } from "react-icons/bs"
 import { Link } from 'react-router-dom';
 import Loader  from '../../components/loader/Loader';
 import Notiflix from 'notiflix';
 import { useDispatch } from 'react-redux';
 import { STORE_PRODUCTS } from '../../redux/slice/productSlice';
+import { ADD_TO_CART } from '../../redux/slice/cartSlice';
 
 // styles
 import "./ViewProducts.css"
@@ -53,6 +55,8 @@ const ViewProducts = () => {
     }
   };
 
+ 
+
   // using comfirmbox/notiflix before deleting product
   const confirmDelete = (id) => {
     Notiflix.Confirm.show(
@@ -74,6 +78,11 @@ const ViewProducts = () => {
         // etc...
       },
     );
+  };
+
+  //add to cart/ grocerylist
+  const addToCart = (product) => {
+    dispatch(ADD_TO_CART(product))
   };
 
   const deleteProduct = async (id) => {
@@ -105,8 +114,8 @@ const ViewProducts = () => {
             {products.map((product, index) => {
               const {id, name, category, amount} = product;
               return (
-                
                   <tr key={id}>
+                    <td><BsCheck size={20} onClick={() => addToCart(product)}/></td>
                     <td>{name}</td>
                     <td>{amount}</td>
                     <td>{category}</td>                    

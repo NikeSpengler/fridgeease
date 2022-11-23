@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { toast } from 'react-toastify';
 
 const initialState = {
     cartItems: localStorage.getItem("cartItems") ? 
@@ -13,6 +14,24 @@ const cartSlice = createSlice({
   reducers: {
       ADD_TO_CART(state, action) {
           console.log(action.payload);
+          const productIndex = state.cartItems.findIndex
+          ((item) => item.id === action.payload.id)
+
+          if (productIndex >= 0) {
+            // Item aldready exist in the cart
+            // Increase the cartQuantity
+            state.cartItems[productIndex].cartQuantity += 1;
+            toast.info(`${action.payload.name} ökade med ett`, {position: "top-left"})
+
+          } else {
+            // Item do not exist in the cart
+            // Add item to the cart
+            const tempProduct =  {...action.payload, cartQuantity: 1}
+            state.cartItems.push(tempProduct)
+            toast.success(`${action.payload.name} är tillagd i inköpslistan`, {position: "top-left"})
+          }
+          //save cart to localstorage
+          localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
       },
     },
 });

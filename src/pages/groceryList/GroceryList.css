@@ -6,6 +6,54 @@ section {
     /* flex-direction: column; */
 }
 
+.table {
+    padding: 5px;
+    width: 100%;
+    overflow-x: auto;
+
+}
+  
+.search {
+      width: 100%;
+      max-width: 300px;
+}
+  
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.4rem;
+    margin-top: 40px;
+}
+  
+
+
+th {
+    border: 1px solid #eee;
+}
+  
+th,
+td {
+    vertical-align: top;
+    text-align: left;
+    padding: 8px;
+}
+
+.icons {
+    margin-right: 5px;
+    cursor: pointer;
+}
+        
+  
+tr {
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    color: darkgreen;
+}
+  
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
 h1 {
     color: darkgreen;
     text-align: center;
@@ -26,85 +74,10 @@ p{
 
 }
 
-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 300;
-    width: 100%;
-    border: none;
-    outline: none;
-}
 
-input{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: whitesmoke;
-    color: darkgreen;
-    border-radius: 20px;
-    border: none;
-    margin-top: 20px;
-    padding: 10px 10px;
-    padding-right: 200px;
 
-}
 
-select{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: whitesmoke;
-    color: darkgreen;
-    border-radius: 20px;
-    border: none;
-    margin-top: 20px;
-    padding: 10px 10px;
-    padding-right: 245px;
-}
 
-.placeholder{
-    color: darkgreen;
-}
-
-.side-by{
-    display: flex;
-    justify-content: space-between; 
-}
-
-/* .button-parent{
-    display: flex;
-    justify-content: space-between;  
-} */
-
-.button-add {
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 20px;
-    border: none;
-    margin-top: 20px;
-     background-color: darkgreen;
-    color: whitesmoke;
-}
-
-/* button {
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    text-align: center;
-    background-color: darkgreen;
-    color: whitesmoke;
-    border-radius: 20px;
-    border: none;
-    padding: 10px 50px;
-    margin-top: 20px;
-    
-} */
 
 button:hover {
     opacity: 90%;

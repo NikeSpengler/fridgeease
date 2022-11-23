@@ -68,8 +68,15 @@ input{
 }
 
 .product-filter{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: darkgreen;
+    border: 1px solid darkgreen;
+    border-radius: 20px;
+    padding: 7px;
     background-color: #dfdfdf;
-    padding: none;
+    margin-top: 20px;
 }
 
 .placeholder{
@@ -93,7 +100,7 @@ input{
     border-radius: 20px;
     border: none;
     margin-top: 20px;
-     background-color: darkgreen;
+    background-color: darkgreen;
     color: whitesmoke;
 }
 
@@ -114,6 +121,8 @@ input{
 button:hover {
     opacity: 90%;
 }
+
+
 
 link {
     display: flex;
