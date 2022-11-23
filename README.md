@@ -9,7 +9,7 @@ I inköpslistan kan du likt i kylskåpet läsa detaljerad info om varan genom ik
 Det som skulle behöva vidareutvecklas för att nå hela appens funktionalitet är att lägga till en receptdatabas, där en kan matcha recept med varor från kylskåpet. Samt att kunna spara på sina favoritrecept. Något jag också skulle vilja bygga vidare på för att nå en bättre funktionalitet är admin-funktionaliteten. 
  
 För att köra appen, skriv in “npm start” i din konsoll.
-För att kunna använda dig av Firebase funktionalitet måste du först registrerar dig och sedan logga in.
+För att kunna använda dig av Firebase funktionalitet måste du först registrera dig och sedan logga in.
 
 # Getting Started with Create React App
 
