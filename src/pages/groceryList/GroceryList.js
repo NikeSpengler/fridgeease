@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AiFillMinusCircle } from 'react-icons/ai';
 import { BiTrash } from 'react-icons/bi';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
@@ -6,7 +6,7 @@ import { FiInfo } from 'react-icons/fi';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { selectCartItems, selectCartTotalAmount, selectCartTotalQuantity } from '../../redux/slice/cartSlice';
-import { ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART, CLEAR_CART } from '../../redux/slice/cartSlice';
+import { ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART, CLEAR_CART, CALCULATE_TOTAL_QUANTITY } from '../../redux/slice/cartSlice';
 
 //styles
 import "./GroceryList.css"
@@ -34,6 +34,11 @@ const GroceryList = () => {
   const clearCart = (cart) => {
     dispatch(CLEAR_CART());
   };
+
+  // Caluculate total quantity of products i cart
+  useEffect (() => {
+    dispatch(CALCULATE_TOTAL_QUANTITY());
+  }, [dispatch, cartItems]);
 
 
 
