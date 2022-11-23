@@ -4,7 +4,7 @@ FridgeEase är en app byggd med en backend bestående av Firebase och Redux och 
  
 Du kan även skapa en inköpslista genom att lägga till varor till den från ditt kylskåp. I nuläget kan du som användare registrera dig, logga in och lägga till varor i ditt kylskåp, titta på detaljerad information om varan genom ikonen “info”, lägga till de varor du vill ha i din inköpslista genom att trycka på ikonen “check” och radera de varor du vill ta bort från ditt kylskåp genom ikonen “trash”. 
  
-I inköpslistan kan du likt i kylskåpet läsa detaljerad info om varan genom ikonen med samma utseende som i kylskåpet, likaså är ikonen för att radera en vara likadan. Du kan även öka och minska antalet varor av samma produkt genom plus- och minus-ikonerna. Under inköpslistan kan du se hur många varor du totalt har i din inköpslista och du kan även radera hela listans innehåll genom att trycka på knappen “Radera inköpslistan”.
+I inköpslistan kan du likt i kylskåpet läsa detaljerad info om varan genom ikonen med samma utseende som i kylskåpet, även ikonen för att radera en vara likadan. Du kan även öka och minska antalet varor av samma produkt genom plus- och minus-ikonerna. Under inköpslistan kan du se hur många varor du totalt har i din inköpslista och du kan även radera hela listans innehåll genom att trycka på knappen “Radera inköpslistan”.
  
 Det som skulle behöva vidareutvecklas för att nå hela appens funktionalitet är att lägga till en receptdatabas, där en kan matcha recept med varor från kylskåpet. Samt att kunna spara på sina favoritrecept. Något jag också skulle vilja bygga vidare på för att nå en bättre funktionalitet är admin-funktionaliteten. 
  
