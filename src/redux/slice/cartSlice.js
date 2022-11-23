@@ -49,7 +49,7 @@ const cartSlice = createSlice({
             state.cartItems = newCartItem
             toast.success(`${action.payload.name} är raderad från inköpslistan`, {position: "top-left"});
         }
-        //save cart to localstorage
+        //saved cart to localstorage
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       },
       REMOVE_FROM_CART(state, action) {
@@ -60,13 +60,21 @@ const cartSlice = createSlice({
         toast.success(`${action.payload.name} är raderad från inköpslistan`, {
             position: "top-left"
         });
-        //save cart to localstorage
+        //saved cart to localstorage
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       },
+      CLEAR_CART(state, action) {
+          state.cartItems = []
+          toast.info(`Inköpslistan är rederad`, {
+              position: "top-left",
+        });
+        //saved cart to localstorage
+        localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+        },
     },
 });
 
-export const {ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART } = cartSlice.actions;
+export const {ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART, CLEAR_CART } = cartSlice.actions;
 
 export const selectCartItems = (state) => state.cart.cartItems;
 export const selectCartTotalQuantity = (state) => state.cart.cartTotalQuantity;

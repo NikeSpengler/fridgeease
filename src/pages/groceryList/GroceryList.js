@@ -6,7 +6,7 @@ import { FiInfo } from 'react-icons/fi';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { selectCartItems, selectCartTotalAmount, selectCartTotalQuantity } from '../../redux/slice/cartSlice';
-import { ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART } from '../../redux/slice/cartSlice';
+import { ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART, CLEAR_CART } from '../../redux/slice/cartSlice';
 
 //styles
 import "./GroceryList.css"
@@ -29,6 +29,13 @@ const GroceryList = () => {
   const removeFromCart = (cart) => {
     dispatch(REMOVE_FROM_CART(cart));
   };
+
+  // Clear whole cart
+  const clearCart = (cart) => {
+    dispatch(CLEAR_CART());
+  };
+
+
 
   return (
     <section className="container">
@@ -87,7 +94,7 @@ const GroceryList = () => {
               <p>{`Antal varor: ${cartTotalQuantity}`}</p>
             </div>
             <div>
-              <button>Radera inköpslistan</button>
+              <button onClick={clearCart}>Radera inköpslistan</button>
             </div>
             </>
           )}
