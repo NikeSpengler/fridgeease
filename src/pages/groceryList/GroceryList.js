@@ -6,7 +6,7 @@ import { FiInfo } from 'react-icons/fi';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { selectCartItems, selectCartTotalAmount, selectCartTotalQuantity } from '../../redux/slice/cartSlice';
-import { ADD_TO_CART, DECREASE_CART} from '../../redux/slice/cartSlice';
+import { ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART } from '../../redux/slice/cartSlice';
 
 //styles
 import "./GroceryList.css"
@@ -23,6 +23,11 @@ const GroceryList = () => {
   };
   const decreaseCart = (cart) => {
     dispatch(DECREASE_CART(cart));
+  };
+
+  //Remove from cart
+  const removeFromCart = (cart) => {
+    dispatch(REMOVE_FROM_CART(cart));
   };
 
   return (
@@ -72,7 +77,7 @@ const GroceryList = () => {
                         
                       </td>                   */}
                       <td><Link to ={`/fridge/${id}`}><FiInfo size={20}/></Link></td>
-                      <td><BiTrash size={20} color="red" onClick={() => confirmDelete(id)}/></td>
+                      <td><BiTrash size={20} color="red" onClick={() => removeFromCart(cart)}/></td>
                     </tr>
                   )
                 })}
