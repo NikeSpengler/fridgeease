@@ -1,3 +1,4 @@
+import "./Home.css"
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { auth } from '../../firebase/config'
@@ -8,8 +9,6 @@ import { REMOVE_ACTIVE_USER } from '../../redux/slice/authSlice';
 import {BiFridge} from "react-icons/bi";
 
 
-//styles
-import "./Home.css"
 
 function Home() {
   const [displayName, setdisplayName] = useState("");
@@ -54,8 +53,6 @@ function Home() {
             <p className='text-home'>Appen för dig som vill ta till vara på allt i ditt kylskåp, 
             ha koll på varornas hållbarhet<br/> och söka efter recept som passar de varor du vill använda först.</p>
             <a className='link-fridge' href='/fridge'>Tryck här för att komma till ditt kylskåp.</a>
-            
-
         </div>
     </section>
   )
