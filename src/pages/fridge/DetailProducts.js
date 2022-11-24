@@ -7,9 +7,6 @@ import { db } from '../../firebase/config'
 import { Loader } from "rsuite"
 import { useDispatch } from "react-redux"
 import { ADD_TO_CART } from "../../redux/slice/cartSlice"
-// import { IoIosArrowBack} from "react-icons/io"
-// <IoIosArrowBack size={20}/>
-
 
 const DetailProducts = () => {
     const { id } = useParams()

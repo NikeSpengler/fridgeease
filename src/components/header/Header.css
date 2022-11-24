@@ -40,17 +40,6 @@ nav ul li{
     margin: 0 30px;
 }
 
-nav .desktop-links {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 75%;
-}
-
-nav .mobile-links {
-    display: none;
-}
-
 a:hover {
     color: darkred;
 }
@@ -58,24 +47,6 @@ a:hover {
 nav .navbar-logo {
     margin: 20px;
 }
-
-
-
-
-/* li a {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    /* align-items: center;
-    flex-direction: column;
-    text-decoration: none;
-    font-size: small;
-    width: 100%;
-    text-align: center; 
-    
-} */
-
-
 
 
 /* FOR MOBILE DEVICE */

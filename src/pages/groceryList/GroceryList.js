@@ -1,3 +1,4 @@
+import "./GroceryList.css"
 import React, { useEffect } from 'react'
 import { AiFillMinusCircle } from 'react-icons/ai';
 import { BiTrash } from 'react-icons/bi';
@@ -5,15 +6,12 @@ import { BsFillPlusCircleFill } from 'react-icons/bs';
 import { FiInfo } from 'react-icons/fi';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { selectCartItems, selectCartTotalAmount, selectCartTotalQuantity } from '../../redux/slice/cartSlice';
+import { selectCartItems, selectCartTotalQuantity } from '../../redux/slice/cartSlice';
 import { ADD_TO_CART, DECREASE_CART, REMOVE_FROM_CART, CLEAR_CART, CALCULATE_TOTAL_QUANTITY } from '../../redux/slice/cartSlice';
 
-//styles
-import "./GroceryList.css"
 
 const GroceryList = () => {
   const cartItems =  useSelector(selectCartItems)
-  const cartTotalAmount =  useSelector(selectCartTotalAmount)
   const cartTotalQuantity =  useSelector(selectCartTotalQuantity)
   const dispatch = useDispatch();
 
@@ -46,17 +44,6 @@ const GroceryList = () => {
     <section className="container">
       <div className='form'>
           <h1>Din inköpslista</h1>
-          {/* <form onSubmit={""}>
-              <input 
-                  type='text' 
-                  placeholder='Lägg till matvara...' 
-                  // required
-                  name="name"
-                
-              /> 
-              <button type="submit" className='button-add'>Lägg till</button>
-
-          </form> */}
           {cartItems.lenght === 0 ? (
             <>
               <p>Inköpslistan är tom</p>
@@ -80,14 +67,6 @@ const GroceryList = () => {
                       <td><Link className='cart-btn' onClick={() => increaseCart(cart)}><BsFillPlusCircleFill size={20}/></Link></td> 
                       <td>{cartQuantity}</td> 
                       <td><Link className='cart-btn' onClick={() => decreaseCart(cart)}><AiFillMinusCircle size={23}/></Link></td> 
-                      {/* <td >
-                        <div className='cart-count'>
-                          <Link className='cart-btn'><BsFillPlusCircleFill size={20}/></Link>
-                            <p>{cartQuantity}</p>
-                          <Link className='cart-btn'><AiFillMinusCircle size={23}/></Link>
-                        </div>
-                        
-                      </td>                   */}
                       <td><Link to ={`/fridge/${id}`}><FiInfo size={20}/></Link></td>
                       <td><BiTrash size={20} color="red" onClick={() => removeFromCart(cart)}/></td>
                     </tr>

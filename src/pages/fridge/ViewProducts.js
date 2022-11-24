@@ -1,3 +1,4 @@
+import "./ViewProducts.css"
 import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from '@firebase/firestore';
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
@@ -12,22 +13,18 @@ import { useDispatch } from 'react-redux';
 import { STORE_PRODUCTS } from '../../redux/slice/productSlice';
 import { ADD_TO_CART } from '../../redux/slice/cartSlice';
 
-// styles
-import "./ViewProducts.css"
-
-
 
 const ViewProducts = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const dispatch =  useDispatch()
 
   useEffect (() => {
     getProducts()
   }, [])
 
-  const getProducts = () => {
+  const getProducts
+   = () => {
     setIsLoading(true)
 
     try {
@@ -54,8 +51,6 @@ const ViewProducts = () => {
       toast.error (error.message);
     }
   };
-
- 
 
   // using comfirmbox/notiflix before deleting product
   const confirmDelete = (id) => {
@@ -85,6 +80,8 @@ const ViewProducts = () => {
     dispatch(ADD_TO_CART(product))
   };
 
+
+  // Delete products
   const deleteProduct = async (id) => {
     try {
       await deleteDoc(doc(db, "products", id));

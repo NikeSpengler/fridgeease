@@ -1,3 +1,4 @@
+import "./Fridge.css"
 import { addDoc, collection, Timestamp } from '@firebase/firestore';
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
@@ -8,19 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectProducts } from '../../redux/slice/productSlice';
 import { FILTER_BY_CATEGORY } from '../../redux/slice/filterSlice';
 
-
-
-//styles
-import "./Fridge.css"
-
-
-// const categories = [
-//     {id: 1, name: "Allt"},
-//     {id: 2, name: "Grönsak"},
-//     {id: 3, name: "Frukt"},
-//     {id: 4, name: "Kylvara"},
-//     {id: 5, name: "Torrvara"},
-// ]
 
 const initialState = {
     name:"",
@@ -52,15 +40,6 @@ const Fridge = () => {
         dispatch(FILTER_BY_CATEGORY({products, category}));
     }, [dispatch, products, category]);
 
-    // const filterProducts = (cat) => {
-    //     setCategory(cat)
-    //     dispatch(FILTER_BY_CATEGORY({products, category: cat}))
-    // };
-
-
-
-
-    // 
     const handleInputChange = (e) => {
         const {name, value} = e.target
         setProduct({...product, [name]: value})
@@ -103,25 +82,7 @@ const Fridge = () => {
                     value={product.name}
                     onChange={(e) => handleInputChange(e)}
                 />
-                    {/* <select className='category'
-                        type='text' 
-                        placeholder='kategori' 
-                        // required
-                        name="category"
-                        value={product.category}
-                        onChange={(e) => handleInputChange(e)} >
-                            <option value="" disabled>
-                                Välj kategori
-                            </option>
-                            {categories.map((cat) => {
-                                return (
-                                    <option key={cat.id} value={cat.name}>
-                                        {cat.name}
-                                    </option>
-                                )
-                            })}
-                    </select>  */}
-                    
+
                     <button type="submit" className='button-add'>Lägg till</button>
                   {/* Next part of filter by category */}
                     <select className='product-filter'
@@ -133,31 +94,8 @@ const Fridge = () => {
                                 <option key={index} value={category}>{category}</option>
                             )
                         })}
-                        
-                        {/* <option value="" disabled>Filter</option>
-                        <option value="allt">Allt</option>
-                        <option value="grönsak">Grönsak</option>
-                        <option value="frukt">Frukt</option>
-                        <option value="kylvara">Kylvara</option>
-                        <option value="torrvara">Torrvara</option> */}
                     </select>
             </form>
-           
-             {/* <input 
-                    type='text' 
-                    placeholder='Beskrivning' 
-                    // required
-                    name="desc"
-                    value={product.desc}
-                    onChange={(e) => handleInputChange(e)}
-                /> */}
-                 {/* <div className='button-parent'>
-                    <button type="submit" className='button-add'>Lägg till</button>
-                </div> */}
-            {/* <div className='button-parent'>
-                <button type="submit" className='button-add'>Lägg till</button>
-                <button type="submit" className='button-search'>Sök</button>
-            </div> */}
         </div>
         <ViewProducts/>
     </section>
