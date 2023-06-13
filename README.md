@@ -14,6 +14,9 @@ Det som skulle behöva vidareutvecklas för att nå hela appens funktionalitet �
 För att köra appen, skriv in “npm start” i din konsoll.
 För att kunna använda dig av Firebase funktionalitet måste du först registrera dig och sedan logga in.
 
+<img width="213" alt="Skärmavbild 2023-06-13 kl  10 38 58" src="https://github.com/NikeSpengler/fridgeease/assets/32640656/9e2b5e3f-ccb7-4af0-96cc-e9eb9364884c">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
