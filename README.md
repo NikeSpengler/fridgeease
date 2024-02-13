@@ -2,7 +2,7 @@
 
 This project started as a group project where we came up with the idea together. Then we had all group members build our own version of the idea. 
 
-## Built uisng: 
+## Built using: 
 React, CSS, SASS, Redux, Firebase
 
 
