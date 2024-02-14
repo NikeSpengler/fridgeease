@@ -20,7 +20,8 @@ What would need to be further developed to reach the full functionality of the a
 
 To run the app, type “npm start” in your console. To be able to use Firebase functionality, you must first register and then log in.
 
-<img width="213" alt="Skärmavbild 2023-06-13 kl  10 38 58" src="https://github.com/NikeSpengler/fridgeease/assets/32640656/9e2b5e3f-ccb7-4af0-96cc-e9eb9364884c">
+<img width="909" alt="Skärmavbild 2024-02-14 kl  10 11 32" src="https://github.com/NikeSpengler/fridgeease/assets/32640656/4d286838-c317-4470-b6e7-b13b592a7224">
+
 
 
 # Getting Started with Create React App
